@@ -1,0 +1,23 @@
+{
+	"order": {
+		"orderID": 687779,
+		"type": "create",
+
+		"customerDetails": {
+			"customerID": 808,
+			"name": "mohan"
+		},
+
+		"itemDetails": {
+			"itemcode": "687ZA",
+			"category": "domestic",
+			"totalPrice": 323266,
+			"totalQuantity": 32
+		},
+		"shipping Address": {
+			"house number": 1313,
+			"street": "bagpipers lane",
+			"city": "banglore"
+		}
+	}
+}

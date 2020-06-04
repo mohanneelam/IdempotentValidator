@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="orders" format="json">
+      <types:shape format="weave" example="examples/orders.json"><![CDATA[%dw 2.0
+
+type orders = {|
+  order: {|
+    orderID: Number {"typeId": "int"}, 
+    "type": String, 
+    customerDetails: {|
+      customerID: Number {"typeId": "int"}, 
+      name: String
+    |}, 
+    itemDetails: {|
+      itemcode: String, 
+      category: String, 
+      totalPrice: Number {"typeId": "int"}, 
+      totalQuantity: Number {"typeId": "int"}
+    |}, 
+    "shipping Address": {|
+      "house number": Number {"typeId": "int"}, 
+      street: String, 
+      city: String
+    |}
+  |}
+|} {"example": "{\"order\":{\"orderID\":687779,\"type\":\"create\",\"customerDetails\":{\"customerID\":808,\"name\":\"mohan\"},\"itemDetails\":{\"itemcode\":\"687ZA\",\"category\":\"domestic\",\"totalPrice\":323266,\"totalQuantity\":32},\"shipping Address\":{\"house number\":1313,\"street\":\"bagpipers lane\",\"city\":\"banglore\"}}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#0f902db4-ae24-4692-8c61-e83af095d253">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="orders"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
