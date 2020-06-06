@@ -11,7 +11,7 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<os:object-store name="Object_store" doc:name="Object store" doc:id="121d285e-4489-42a3-b2a4-65f34956fa79" maxEntries="100" entryTtl="5" entryTtlUnit="HOURS" />
-	<api-gateway:autodiscovery apiId="16189750" doc:name="API Autodiscovery" doc:id="aaff06a0-6ad1-46a5-8c0c-a08b16e25430" flowRef="idempotentvalidatorFlow" />
+	<api-gateway:autodiscovery apiId="16189750" doc:name="API Autodiscovery" doc:id="63a09149-ce37-46b1-abf2-fef179954926" flowRef="idempotentvalidatorFlow" />
 	<flow name="idempotentvalidatorFlow" doc:id="ec2f282e-e4a9-41e3-9d01-3d0076f88606" >
 		<http:listener doc:name="Listener" doc:id="0f902db4-ae24-4692-8c61-e83af095d253" config-ref="HTTP_Listener_config" path="/idempotentValidator"/>
 		<logger level="INFO" doc:name="Logger" doc:id="be7a171a-8e0b-4730-8e44-1d0d3da0876f" message="=========the flow has just begun========"/>
